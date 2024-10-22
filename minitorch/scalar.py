@@ -125,7 +125,7 @@ class Scalar:
         """Compute the ReLU of the input."""
         return ReLU.apply(self)
 
-    def __eq__(self, b: ScalarLike) -> Scalar:
+    def eq(self, b: ScalarLike) -> Scalar:
         """Compute the equality of the inputs."""
         return EQ.apply(self, b)
 
