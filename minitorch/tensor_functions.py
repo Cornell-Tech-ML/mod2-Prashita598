@@ -435,8 +435,13 @@ class View(Function):
             Tuple[Tensor, Tensor]: Gradients with respect to the inputs.
 
         """
-        shape, dim = ctx.saved_values
-        return grad_output, 0.0
+        (original,) = ctx.saved_values
+        return (
+            minitorch.Tensor.make(
+                grad_output._tensor._storage, original, backend=grad_output.backend
+            ),
+            0.0,
+        )
 
 
 class Copy(Function):
