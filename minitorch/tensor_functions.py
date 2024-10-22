@@ -220,7 +220,7 @@ class Exp(Function):
 
 class Sum(Function):
     @staticmethod
-    def forward(ctx: Context, t: Tensor, dim: Optional[int] = None) -> Tensor:
+    def forward(ctx: Context, t: Tensor, dim: Optional[Tensor] = None) -> Tensor:
         """Forward pass for sum operation."""
         if dim is not None:
             ctx.save_for_backward(t.shape, dim)
@@ -231,7 +231,7 @@ class Sum(Function):
         return result
 
     @staticmethod
-    def backward(ctx: Context, grad_output: Tensor) -> Tuple[Tensor, Tensor]:
+    def backward(ctx: Context, grad_output: Tensor) -> Tuple[Tensor, float]:
         """Backward pass for the reshape operation.
 
         Args:
