@@ -194,6 +194,8 @@ def test_reduce_forward_one_dim() -> None:
 
     # here 0 means to reduce the 0th dim, 3 -> nothing
     t_summed = t.sum(0)
+    print(f"Shape of t_summed: {t_summed.shape}")
+    print(f"Value of t_summed: {t_summed}")
 
     # shape (2)
     t_sum_expected = tensor([[11, 16]])

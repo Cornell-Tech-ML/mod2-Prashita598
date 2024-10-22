@@ -1,6 +1,6 @@
 # type: ignore
 
-from typing import Callable, Generic, Iterable, Tuple, TypeVar
+from typing import Callable, Generic, Iterable, Tuple, TypeVar, List
 
 import minitorch.operators as operators
 
